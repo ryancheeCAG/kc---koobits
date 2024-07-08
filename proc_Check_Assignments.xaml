@@ -1,0 +1,525 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="proc_Check_Assignments" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ss="clr-namespace:System.Security;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_api" Type="InArgument(ss:SecureString)" />
+    <x:Property Name="in_token" Type="InArgument(x:String)" />
+  </x:Members>
+  <this:proc_Check_Assignments.in_api>
+    <InArgument x:TypeArguments="ss:SecureString" />
+  </this:proc_Check_Assignments.in_api>
+  <this:proc_Check_Assignments.in_token>
+    <InArgument x:TypeArguments="x:String" />
+  </this:proc_Check_Assignments.in_token>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>3410,3339</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>proc_Check_Assignments_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.ExtractData</x:String>
+      <x:String>UiPath.DataTableUtilities</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="proc_Check_Assignments" sap:VirtualizedContainerService.HintSize="3420,3274" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Chrome: KooBits - Engaging the Digital Kids" sap:VirtualizedContainerService.HintSize="3358,3163" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="e56083ce-68ae-41ed-8f05-d400a2d3a92d" Version="V2" WindowResize="Maximize">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="3324,2946" sap2010:WorkflowViewState.IdRef="Sequence_7">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:Int32" Name="countResult" />
+              <Variable x:TypeArguments="sd:DataTable" Default="[New System.Data.DataTable]" Name="ExtractDataTable" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NCheckState DisplayName="Check App State 'Got It'" sap:VirtualizedContainerService.HintSize="3262,2833" sap2010:WorkflowViewState.IdRef="NCheckState_3" ScopeIdentifier="e56083ce-68ae-41ed-8f05-d400a2d3a92d" Timeout="3" Version="V3">
+              <uix:NCheckState.IfExists>
+                <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="1604,2616" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="proc_Telegram_API - Send message.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="1542,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="proc_Telegram_API - Send message.xaml">
+                    <ui:InvokeWorkflowFile.Arguments>
+                      <InArgument x:TypeArguments="x:String" x:Key="in_TelegramMessageToSend">Login success</InArgument>
+                      <InArgument x:TypeArguments="ss:SecureString" x:Key="in_api">[in_api]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="in_token">[in_token]</InArgument>
+                    </ui:InvokeWorkflowFile.Arguments>
+                  </ui:InvokeWorkflowFile>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Got It'" sap:VirtualizedContainerService.HintSize="1542,157" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="e56083ce-68ae-41ed-8f05-d400a2d3a92d" Version="V3">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="https://student.koobits.com/notification" DesignTimeRectangle="1628, 832, 200, 44" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'Got It'" FullSelectorArgument="&lt;webctrl aaname='Got It' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Got It' tag='BUTTON' type='' class='sc-crzoUp fhXrWL primary' check:innerText='Got It' /&gt;" Guid="a07f9a6c-eeb6-48fc-a163-23fd39fa757f" InformativeScreenshot="3e24b40f51af39574b3f092de9f269f2.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='KooBits - Engaging the Digital Kids' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive" />
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                  <uix:NCheckState DisplayName="Check App State 'Chee Xin Hui Katelyn'" sap:VirtualizedContainerService.HintSize="1542,2153" sap2010:WorkflowViewState.IdRef="NCheckState_4" ScopeIdentifier="e56083ce-68ae-41ed-8f05-d400a2d3a92d" Timeout="3" Version="V3">
+                    <uix:NCheckState.IfExists>
+                      <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="1038,1936" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="proc_Telegram_API - Send message.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="976,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="proc_Telegram_API - Send message.xaml">
+                          <ui:InvokeWorkflowFile.Arguments>
+                            <InArgument x:TypeArguments="x:String" x:Key="in_TelegramMessageToSend">
+                              <Literal x:TypeArguments="x:String">Entering dashboard</Literal>
+                            </InArgument>
+                            <InArgument x:TypeArguments="ss:SecureString" x:Key="in_api">
+                              <VisualBasicValue x:TypeArguments="ss:SecureString" ExpressionText="in_api" />
+                            </InArgument>
+                            <InArgument x:TypeArguments="x:String" x:Key="in_token">
+                              <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_token" />
+                            </InArgument>
+                          </ui:InvokeWorkflowFile.Arguments>
+                        </ui:InvokeWorkflowFile>
+                        <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Assignment'" sap:VirtualizedContainerService.HintSize="976,157" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="e56083ce-68ae-41ed-8f05-d400a2d3a92d" Version="V3">
+                          <uix:NClick.Target>
+                            <uix:TargetAnchorable BrowserURL="https://student.koobits.com/dashboard?subject=math&amp;plan=school" DesignTimeRectangle="1963, 823, 308, 286" DesignTimeScaleFactor="1" FriendlyName="'Assignment'" FullSelectorArgument="&lt;webctrl name='Assignment' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl name='Assignment' tag='DIV' type='' class='sc-kHVJdr jPoqYE' aaname='' check:innerText='Assignment' /&gt;" Guid="0a069daf-6193-437e-bb3b-f55e0ce06fdc" InformativeScreenshot="560ac65ec1b85159b81b29de2492f38a.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='KooBits - Engaging the Digital Kids' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive" />
+                          </uix:NClick.Target>
+                        </uix:NClick>
+                        <uix:NCheckState DisplayName="Check App State 'Complete'" sap:VirtualizedContainerService.HintSize="976,1471" sap2010:WorkflowViewState.IdRef="NCheckState_5" ScopeIdentifier="e56083ce-68ae-41ed-8f05-d400a2d3a92d" Timeout="3" Version="V3">
+                          <uix:NCheckState.IfExists>
+                            <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="472,1254" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="proc_Telegram_API - Send message.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="410,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_9" UnSafe="False" WorkflowFileName="proc_Telegram_API - Send message.xaml">
+                                <ui:InvokeWorkflowFile.Arguments>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_TelegramMessageToSend">
+                                    <Literal x:TypeArguments="x:String">Checking assignments</Literal>
+                                  </InArgument>
+                                  <InArgument x:TypeArguments="ss:SecureString" x:Key="in_api">
+                                    <VisualBasicValue x:TypeArguments="ss:SecureString" ExpressionText="in_api" />
+                                  </InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_token">
+                                    <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_token" />
+                                  </InArgument>
+                                </ui:InvokeWorkflowFile.Arguments>
+                              </ui:InvokeWorkflowFile>
+                              <uix:NExtractData AppendResults="False" ContinueOnError="True" DataTable="[ExtractDataTable]" DisplayName="Extract Table Data" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Structured' AddCvHeader='true' IsScrollEnabled='false'&gt;&#xD;&#xA;&#x9;&lt;Column xsi:type='DataColumn' Name='Status' ReferenceName='Column0'&gt;&#xD;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xD;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xD;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xD;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xD;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xD;&#xA;&#x9;&lt;/Column&gt;&#xD;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract&gt;&lt;column exact='1' name='Column0' attr='fulltext'&gt;&lt;webctrl tag='div' idx='3' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="410,157" sap2010:WorkflowViewState.IdRef="NExtractData_1" LimitExtractionTo="None" MaximumResults="0" ScopeIdentifier="e56083ce-68ae-41ed-8f05-d400a2d3a92d" Version="V3">
+                                <uix:NExtractData.Target>
+                                  <uix:TargetAnchorable DesignTimeRectangle="8, 188, 3423, 1307" DesignTimeScaleFactor="1" FriendlyName="'BackAllCompleteIncomple…'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' parentid='root' tag='DIV' /&gt;" Guid="a54b3333-23cf-401a-b2c0-5d147da3f328" InformativeScreenshot="15f2dab86742d2a229fd79c1788b42a2.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='KooBits - Engaging the Digital Kids' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                                </uix:NExtractData.Target>
+                              </uix:NExtractData>
+                              <ui:InvokeCode ContinueOnError="{x:Null}" Code="Dim count As Integer = 0&#xD;&#xA;Dim searchText As String = &quot;start now&quot;&#xD;&#xA;&#xD;&#xA;For Each row As System.Data.DataRow In ExtractDataTable.Rows&#xD;&#xA;    For Each column As System.Data.DataColumn In ExtractDataTable.Columns&#xD;&#xA;        If row(column).ToString().ToLower() = searchText.ToLower() Then&#xD;&#xA;            count += 1&#xD;&#xA;        End If&#xD;&#xA;    Next&#xD;&#xA;Next&#xD;&#xA;countResult = count&#xD;&#xA;Console.WriteLine(&quot;The text '&quot; &amp; searchText &amp; &quot;' appears &quot; &amp; count &amp; &quot; times in the DataTable.&quot;)" DisplayName="Invoke Code" sap:VirtualizedContainerService.HintSize="410,165" sap2010:WorkflowViewState.IdRef="InvokeCode_1">
+                                <ui:InvokeCode.Arguments>
+                                  <InArgument x:TypeArguments="sd:DataTable" x:Key="ExtractDataTable">
+                                    <VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="ExtractDataTable" />
+                                  </InArgument>
+                                  <OutArgument x:TypeArguments="x:Int32" x:Key="countResult">
+                                    <VisualBasicReference x:TypeArguments="x:Int32" ExpressionText="countResult" />
+                                  </OutArgument>
+                                </ui:InvokeCode.Arguments>
+                              </ui:InvokeCode>
+                              <If Condition="[countResult &gt; 0]" sap:VirtualizedContainerService.HintSize="410,584" sap2010:WorkflowViewState.IdRef="If_1">
+                                <If.Then>
+                                  <Sequence sap:VirtualizedContainerService.HintSize="376,201" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="proc_Telegram_API - Send message.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="334,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_11" UnSafe="False" WorkflowFileName="proc_Telegram_API - Send message.xaml">
+                                      <ui:InvokeWorkflowFile.Arguments>
+                                        <InArgument x:TypeArguments="x:String" x:Key="in_TelegramMessageToSend">
+                                          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="&quot;Detected &quot; + countResult.ToString + &quot; assignment(s) &quot;" />
+                                        </InArgument>
+                                        <InArgument x:TypeArguments="ss:SecureString" x:Key="in_api">
+                                          <VisualBasicValue x:TypeArguments="ss:SecureString" ExpressionText="in_api" />
+                                        </InArgument>
+                                        <InArgument x:TypeArguments="x:String" x:Key="in_token">
+                                          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_token" />
+                                        </InArgument>
+                                      </ui:InvokeWorkflowFile.Arguments>
+                                    </ui:InvokeWorkflowFile>
+                                  </Sequence>
+                                </If.Then>
+                                <If.Else>
+                                  <Sequence sap:VirtualizedContainerService.HintSize="376,201" sap2010:WorkflowViewState.IdRef="Sequence_16">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="proc_Telegram_API - Send message.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="334,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_12" UnSafe="False" WorkflowFileName="proc_Telegram_API - Send message.xaml">
+                                      <ui:InvokeWorkflowFile.Arguments>
+                                        <InArgument x:TypeArguments="x:String" x:Key="in_TelegramMessageToSend">
+                                          <Literal x:TypeArguments="x:String">No outstanding assignment(s)</Literal>
+                                        </InArgument>
+                                        <InArgument x:TypeArguments="ss:SecureString" x:Key="in_api">
+                                          <VisualBasicValue x:TypeArguments="ss:SecureString" ExpressionText="in_api" />
+                                        </InArgument>
+                                        <InArgument x:TypeArguments="x:String" x:Key="in_token">
+                                          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_token" />
+                                        </InArgument>
+                                      </ui:InvokeWorkflowFile.Arguments>
+                                    </ui:InvokeWorkflowFile>
+                                  </Sequence>
+                                </If.Else>
+                              </If>
+                            </Sequence>
+                          </uix:NCheckState.IfExists>
+                          <uix:NCheckState.IfNotExists>
+                            <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,356" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="proc_Telegram_API - Send message.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_10" UnSafe="False" WorkflowFileName="proc_Telegram_API - Send message.xaml">
+                                <ui:InvokeWorkflowFile.Arguments>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_TelegramMessageToSend">
+                                    <Literal x:TypeArguments="x:String">Assignment page not available</Literal>
+                                  </InArgument>
+                                  <InArgument x:TypeArguments="ss:SecureString" x:Key="in_api">
+                                    <VisualBasicValue x:TypeArguments="ss:SecureString" ExpressionText="in_api" />
+                                  </InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_token">
+                                    <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_token" />
+                                  </InArgument>
+                                </ui:InvokeWorkflowFile.Arguments>
+                              </ui:InvokeWorkflowFile>
+                              <Throw Exception="[New BusinessRuleException(&quot;Assignment page not available&quot;)]" sap:VirtualizedContainerService.HintSize="388,90" sap2010:WorkflowViewState.IdRef="Throw_4" />
+                            </Sequence>
+                          </uix:NCheckState.IfNotExists>
+                          <uix:NCheckState.Target>
+                            <uix:TargetAnchorable BrowserURL="https://student.koobits.com/assignment/assignment-list" DesignTimeRectangle="1669, 210, 76, 27" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Complete'" FullSelectorArgument="&lt;webctrl aaname='Complete' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Complete' tag='SPAN' type='' class='' check:innerText='Complete' /&gt;" Guid="cf141679-b2c3-4f0a-bafe-c7bb8c17b1dc" InformativeScreenshot="bc930470a5eb620248a8635fc249c4ec.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='KooBits - Engaging the Digital Kids' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive">
+                              <uix:TargetAnchorable.Anchors>
+                                <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                                  <uix:Target DesignTimeRectangle="1808, 210, 88, 27" ElementType="Text" FriendlyName="'Incomplete'" FullSelectorArgument="&lt;webctrl aaname='Incomplete' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Incomplete' tag='SPAN' type='' class='' check:innerText='Incomplete' /&gt;" SearchSteps="FuzzySelector" />
+                                </scg:List>
+                              </uix:TargetAnchorable.Anchors>
+                            </uix:TargetAnchorable>
+                          </uix:NCheckState.Target>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </uix:NCheckState>
+                      </Sequence>
+                    </uix:NCheckState.IfExists>
+                    <uix:NCheckState.IfNotExists>
+                      <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,358" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="proc_Telegram_API - Send message.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" UnSafe="False" WorkflowFileName="proc_Telegram_API - Send message.xaml">
+                          <ui:InvokeWorkflowFile.Arguments>
+                            <InArgument x:TypeArguments="x:String" x:Key="in_TelegramMessageToSend">
+                              <Literal x:TypeArguments="x:String">Dashboard not available</Literal>
+                            </InArgument>
+                            <InArgument x:TypeArguments="ss:SecureString" x:Key="in_api">
+                              <VisualBasicValue x:TypeArguments="ss:SecureString" ExpressionText="in_api" />
+                            </InArgument>
+                            <InArgument x:TypeArguments="x:String" x:Key="in_token">
+                              <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_token" />
+                            </InArgument>
+                          </ui:InvokeWorkflowFile.Arguments>
+                        </ui:InvokeWorkflowFile>
+                        <Throw Exception="[New BusinessRuleException(&quot;Dashboard not available&quot;)]" sap:VirtualizedContainerService.HintSize="388,90" sap2010:WorkflowViewState.IdRef="Throw_3" />
+                      </Sequence>
+                    </uix:NCheckState.IfNotExists>
+                    <uix:NCheckState.Target>
+                      <uix:TargetAnchorable BrowserURL="https://student.koobits.com/dashboard?subject=math&amp;plan=school" DesignTimeRectangle="1324, 406, 926, 40" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Chee Xin Hui Katelyn'" FullSelectorArgument="&lt;webctrl class='name' parentid='root' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl class='name' parentid='root' tag='SPAN' type='' aaname='Chee Xin Hui Katelyn' check:innerText='Chee Xin Hui Katelyn' /&gt;" Guid="be6797ba-60a9-49bb-9d6b-be1078483dc7" InformativeScreenshot="e3b4b900c3a7508ed72cc31e3924786e.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='KooBits - Engaging the Digital Kids' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                            <uix:Target DesignTimeRectangle="1324, 445, 926, 33" FriendlyName="'Fengshan Primary School'" FullSelectorArgument="&lt;webctrl class='school' parentid='root' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl class='school' parentid='root' tag='SPAN' type='' aaname='Fengshan Primary School ' check:innerText='Fengshan Primary School' /&gt;" SearchSteps="FuzzySelector" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NCheckState.Target>
+                  </uix:NCheckState>
+                </Sequence>
+              </uix:NCheckState.IfExists>
+              <uix:NCheckState.IfNotExists>
+                <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="1604,2304" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NCheckState DisplayName="Check App State 'Chee Xin Hui Katelyn'" sap:VirtualizedContainerService.HintSize="1542,2193" sap2010:WorkflowViewState.IdRef="NCheckState_6" ScopeIdentifier="e56083ce-68ae-41ed-8f05-d400a2d3a92d" Timeout="3" Version="V3">
+                    <uix:NCheckState.IfExists>
+                      <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="1038,1976" sap2010:WorkflowViewState.IdRef="Sequence_17">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="proc_Telegram_API - Send message.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="976,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_13" UnSafe="False" WorkflowFileName="proc_Telegram_API - Send message.xaml">
+                          <ui:InvokeWorkflowFile.Arguments>
+                            <InArgument x:TypeArguments="x:String" x:Key="in_TelegramMessageToSend">Entering dashboard</InArgument>
+                            <InArgument x:TypeArguments="ss:SecureString" x:Key="in_api">[in_api]</InArgument>
+                            <InArgument x:TypeArguments="x:String" x:Key="in_token">[in_token]</InArgument>
+                          </ui:InvokeWorkflowFile.Arguments>
+                        </ui:InvokeWorkflowFile>
+                        <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Assignment'" sap:VirtualizedContainerService.HintSize="976,157" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="e56083ce-68ae-41ed-8f05-d400a2d3a92d" Version="V3">
+                          <uix:NClick.Target>
+                            <uix:TargetAnchorable BrowserURL="https://student.koobits.com/dashboard?subject=math&amp;plan=school" DesignTimeRectangle="1963, 823, 308, 286" DesignTimeScaleFactor="1" FriendlyName="'Assignment'" FullSelectorArgument="&lt;webctrl name='Assignment' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl name='Assignment' tag='DIV' type='' class='sc-kHVJdr jPoqYE' aaname='' check:innerText='Assignment' /&gt;" Guid="0a069daf-6193-437e-bb3b-f55e0ce06fdc" InformativeScreenshot="560ac65ec1b85159b81b29de2492f38a.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='KooBits - Engaging the Digital Kids' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive" />
+                          </uix:NClick.Target>
+                        </uix:NClick>
+                        <uix:NCheckState DisplayName="Check App State 'Complete'" sap:VirtualizedContainerService.HintSize="976,1511" sap2010:WorkflowViewState.IdRef="NCheckState_7" ScopeIdentifier="e56083ce-68ae-41ed-8f05-d400a2d3a92d" Timeout="3" Version="V3">
+                          <uix:NCheckState.IfExists>
+                            <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="472,1254" sap2010:WorkflowViewState.IdRef="Sequence_19">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="proc_Telegram_API - Send message.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="410,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_14" UnSafe="False" WorkflowFileName="proc_Telegram_API - Send message.xaml">
+                                <ui:InvokeWorkflowFile.Arguments>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_TelegramMessageToSend">Checking assignments</InArgument>
+                                  <InArgument x:TypeArguments="ss:SecureString" x:Key="in_api">[in_api]</InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_token">[in_token]</InArgument>
+                                </ui:InvokeWorkflowFile.Arguments>
+                              </ui:InvokeWorkflowFile>
+                              <uix:NExtractData AppendResults="False" ContinueOnError="True" DataTable="[ExtractDataTable]" DisplayName="Extract Table Data" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Structured' AddCvHeader='true' IsScrollEnabled='false'&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' Name='Status' ReferenceName='Column0'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract&gt;&lt;column exact='1' name='Column0' attr='fulltext'&gt;&lt;webctrl tag='div' idx='3' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="410,157" sap2010:WorkflowViewState.IdRef="NExtractData_2" LimitExtractionTo="None" MaximumResults="0" ScopeIdentifier="e56083ce-68ae-41ed-8f05-d400a2d3a92d" Version="V3">
+                                <uix:NExtractData.Target>
+                                  <uix:TargetAnchorable DesignTimeRectangle="8, 188, 3423, 1307" DesignTimeScaleFactor="1" FriendlyName="'BackAllCompleteIncomple…'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' parentid='root' tag='DIV' /&gt;" Guid="a54b3333-23cf-401a-b2c0-5d147da3f328" InformativeScreenshot="15f2dab86742d2a229fd79c1788b42a2.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='KooBits - Engaging the Digital Kids' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                                </uix:NExtractData.Target>
+                              </uix:NExtractData>
+                              <ui:InvokeCode ContinueOnError="{x:Null}" Code="Dim count As Integer = 0&#xD;&#xA;Dim searchText As String = &quot;start now&quot;&#xD;&#xA;&#xD;&#xA;For Each row As System.Data.DataRow In ExtractDataTable.Rows&#xD;&#xA;    For Each column As System.Data.DataColumn In ExtractDataTable.Columns&#xD;&#xA;        If row(column).ToString().ToLower() = searchText.ToLower() Then&#xD;&#xA;            count += 1&#xD;&#xA;        End If&#xD;&#xA;    Next&#xD;&#xA;Next&#xD;&#xA;countResult = count&#xD;&#xA;Console.WriteLine(&quot;The text '&quot; &amp; searchText &amp; &quot;' appears &quot; &amp; count &amp; &quot; times in the DataTable.&quot;)" DisplayName="Invoke Code" sap:VirtualizedContainerService.HintSize="410,165" sap2010:WorkflowViewState.IdRef="InvokeCode_2">
+                                <ui:InvokeCode.Arguments>
+                                  <InArgument x:TypeArguments="sd:DataTable" x:Key="ExtractDataTable">
+                                    <VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="ExtractDataTable" />
+                                  </InArgument>
+                                  <OutArgument x:TypeArguments="x:Int32" x:Key="countResult">
+                                    <VisualBasicReference x:TypeArguments="x:Int32" ExpressionText="countResult" />
+                                  </OutArgument>
+                                </ui:InvokeCode.Arguments>
+                              </ui:InvokeCode>
+                              <If Condition="[countResult &gt; 0]" sap:VirtualizedContainerService.HintSize="410,584" sap2010:WorkflowViewState.IdRef="If_3">
+                                <If.Then>
+                                  <Sequence sap:VirtualizedContainerService.HintSize="376,201" sap2010:WorkflowViewState.IdRef="Sequence_24">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="proc_Telegram_API - Send message.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="334,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_18" UnSafe="False" WorkflowFileName="proc_Telegram_API - Send message.xaml">
+                                      <ui:InvokeWorkflowFile.Arguments>
+                                        <InArgument x:TypeArguments="x:String" x:Key="in_TelegramMessageToSend">
+                                          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="&quot;Detected &quot; + countResult.ToString + &quot; assignment(s) &quot;" />
+                                        </InArgument>
+                                        <InArgument x:TypeArguments="ss:SecureString" x:Key="in_api">
+                                          <VisualBasicValue x:TypeArguments="ss:SecureString" ExpressionText="in_api" />
+                                        </InArgument>
+                                        <InArgument x:TypeArguments="x:String" x:Key="in_token">
+                                          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_token" />
+                                        </InArgument>
+                                      </ui:InvokeWorkflowFile.Arguments>
+                                    </ui:InvokeWorkflowFile>
+                                  </Sequence>
+                                </If.Then>
+                                <If.Else>
+                                  <Sequence sap:VirtualizedContainerService.HintSize="376,201" sap2010:WorkflowViewState.IdRef="Sequence_25">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="proc_Telegram_API - Send message.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="334,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_19" UnSafe="False" WorkflowFileName="proc_Telegram_API - Send message.xaml">
+                                      <ui:InvokeWorkflowFile.Arguments>
+                                        <InArgument x:TypeArguments="x:String" x:Key="in_TelegramMessageToSend">No outstanding assignment(s)</InArgument>
+                                        <InArgument x:TypeArguments="ss:SecureString" x:Key="in_api">[in_api]</InArgument>
+                                        <InArgument x:TypeArguments="x:String" x:Key="in_token">[in_token]</InArgument>
+                                      </ui:InvokeWorkflowFile.Arguments>
+                                    </ui:InvokeWorkflowFile>
+                                  </Sequence>
+                                </If.Else>
+                              </If>
+                            </Sequence>
+                          </uix:NCheckState.IfExists>
+                          <uix:NCheckState.IfNotExists>
+                            <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,358" sap2010:WorkflowViewState.IdRef="Sequence_23">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="proc_Telegram_API - Send message.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_17" UnSafe="False" WorkflowFileName="proc_Telegram_API - Send message.xaml">
+                                <ui:InvokeWorkflowFile.Arguments>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_TelegramMessageToSend">Assignment page not available</InArgument>
+                                  <InArgument x:TypeArguments="ss:SecureString" x:Key="in_api">[in_api]</InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_token">[in_token]</InArgument>
+                                </ui:InvokeWorkflowFile.Arguments>
+                              </ui:InvokeWorkflowFile>
+                              <Throw Exception="[New BusinessRuleException(&quot;Assignment page not available&quot;)]" sap:VirtualizedContainerService.HintSize="388,90" sap2010:WorkflowViewState.IdRef="Throw_5" />
+                            </Sequence>
+                          </uix:NCheckState.IfNotExists>
+                          <uix:NCheckState.Target>
+                            <uix:TargetAnchorable BrowserURL="https://student.koobits.com/assignment/assignment-list" DesignTimeRectangle="1669, 210, 76, 27" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Complete'" FullSelectorArgument="&lt;webctrl aaname='Complete' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Complete' tag='SPAN' type='' class='' check:innerText='Complete' /&gt;" Guid="cf141679-b2c3-4f0a-bafe-c7bb8c17b1dc" InformativeScreenshot="bc930470a5eb620248a8635fc249c4ec.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='KooBits - Engaging the Digital Kids' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive">
+                              <uix:TargetAnchorable.Anchors>
+                                <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                  <uix:Target DesignTimeRectangle="1808, 210, 88, 27" ElementType="Text" FriendlyName="'Incomplete'" FullSelectorArgument="&lt;webctrl aaname='Incomplete' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Incomplete' tag='SPAN' type='' class='' check:innerText='Incomplete' /&gt;" SearchSteps="FuzzySelector" />
+                                </scg:List>
+                              </uix:TargetAnchorable.Anchors>
+                            </uix:TargetAnchorable>
+                          </uix:NCheckState.Target>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </uix:NCheckState>
+                      </Sequence>
+                    </uix:NCheckState.IfExists>
+                    <uix:NCheckState.IfNotExists>
+                      <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,356" sap2010:WorkflowViewState.IdRef="Sequence_18">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="proc_Telegram_API - Send message.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="proc_Telegram_API - Send message.xaml">
+                          <ui:InvokeWorkflowFile.Arguments>
+                            <InArgument x:TypeArguments="x:String" x:Key="in_TelegramMessageToSend">Login fail</InArgument>
+                            <InArgument x:TypeArguments="ss:SecureString" x:Key="in_api">[in_api]</InArgument>
+                            <InArgument x:TypeArguments="x:String" x:Key="in_token">[in_token]</InArgument>
+                          </ui:InvokeWorkflowFile.Arguments>
+                        </ui:InvokeWorkflowFile>
+                        <Throw Exception="[New BusinessRuleException(&quot;Login fail&quot;)]" sap:VirtualizedContainerService.HintSize="388,90" sap2010:WorkflowViewState.IdRef="Throw_2" />
+                      </Sequence>
+                    </uix:NCheckState.IfNotExists>
+                    <uix:NCheckState.Target>
+                      <uix:TargetAnchorable BrowserURL="https://student.koobits.com/dashboard?subject=math&amp;plan=school" DesignTimeRectangle="1324, 406, 926, 40" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Chee Xin Hui Katelyn'" FullSelectorArgument="&lt;webctrl class='name' parentid='root' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl class='name' parentid='root' tag='SPAN' type='' aaname='Chee Xin Hui Katelyn' check:innerText='Chee Xin Hui Katelyn' /&gt;" Guid="3039e990-1ddf-4b37-b8eb-f7e2753970c5" InformativeScreenshot="e3b4b900c3a7508ed72cc31e3924786e.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='KooBits - Engaging the Digital Kids' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                            <uix:Target DesignTimeRectangle="1324, 445, 926, 33" FriendlyName="'Fengshan Primary School'" FullSelectorArgument="&lt;webctrl class='school' parentid='root' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl class='school' parentid='root' tag='SPAN' type='' aaname='Fengshan Primary School ' check:innerText='Fengshan Primary School' /&gt;" SearchSteps="FuzzySelector" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NCheckState.Target>
+                  </uix:NCheckState>
+                </Sequence>
+              </uix:NCheckState.IfNotExists>
+              <uix:NCheckState.Target>
+                <uix:TargetAnchorable BrowserURL="https://student.koobits.com/notification" DesignTimeRectangle="1628, 832, 200, 44" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'Got It'" FullSelectorArgument="&lt;webctrl aaname='Got It' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Got It' tag='BUTTON' type='' class='sc-crzoUp fhXrWL primary' check:innerText='Got It' /&gt;" Guid="c5801c32-9d7a-4718-8674-e34410edc165" InformativeScreenshot="590b418aa27c5098f742e01bcd10eb78.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='KooBits - Engaging the Digital Kids' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive" />
+              </uix:NCheckState.Target>
+            </uix:NCheckState>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-8, -8, 3456, 1408" BrowserType="Chrome" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAABOtJREFUWEftV1lsW0UUHbMUO54Zh6VSEUlT+EGtgopAqlSkQIAvECAR9Jo0zeJ9DaUVFfCBIFGhfIAEQuIDfgpIlRojARXQFrUI0SUptEFKIJuaBdeOjbPYztKUpba58zzjzHv2o6n6gUAc6Wje3Dv3vjtz77tjo38F8vm8iT/+N8F2p+4wrKDrh1w31y6+XNuw3HVfo4avbNbOy3Cxc/O2ZOiOrfvtG8zs1ASZb/2cQX5Gww7LAzN++sNiiGYXO2gexrw6Coo5G2WWynKZjsrIpIM4wO3KC/4Oo/aKx+eD9KLO0bWxg2YTHtwF7tUgTih4bcJHXvxeMd/J5kUcf5rcmgmShGRY6kympF/iNNID/xy24/rDj6GbZv30GJOlAyQ+0oYf5q9HKOqmOzWG+vEaOeXB78Xc5C1ZthAkl35x4lAnQteh+V3rujW7gBenAvTHGT/uhpronvEB4XnWT4aFnq/Nge6IqlfX0O6klxwC+WXJz1iPYtnyUwuuh53HuB3QxsZs3EP2oaU9VV/rdxv14Gf5ARUx6bS+Ia/51UsPqjtYgSnuxm8LfSZI0z+34GdSkN6El3x4RsGbZn30jOxj2ke/KgQgCRmvFADsbOSoQm/hKhWTLtwEOnX3CyH6+2ibtT0VIP3CBk7w9CmF3M2CgXkuHaRTvU3mDRBA9VUFMB+0XRxss2zhYhX9rbgWvqI0t89NOslL017ypfAnmPLTyECbZWvMbd010Y4fBFOTegKimkUtGAWwFLLlIk6q0R1TkG3OTwaYHejzkNcPoLDfLcy1ATDOh2j6mwZzDTdH0gmohaHSKICEl4YV6JZchFgNQC0cEHZQjMfHHdbdUFNZIdMxF/PgvWC60qA0RcjHcgGcbapw9ejy3tu4ZuNCEPJeqPiRwTZrC+T/N+mFGk77yCfe+9GN3LyAkhoAZ+UCABR3LsGU9JFPMwE6N9CKFaj8GY0viZD/PpYubrcCFoCcK/ZsEEBZnNthvSfpxQegNl4F25zwIRMKND7QbL6Lm2ix2s/QCCcV8/qIC3exerjgwsGFEFmWfUGbXz7fih/iy0uhpkDXiCJuvJOrNTj0FCKsq/Gpir4Wcx2/+VSM2kldOkii3Fd23IEDebno9CjWgBREuRNgO4Tb7CNWbPvrkZmLUcxD7Ocd2h1+12Sphk/zRMxF3xlzWN/sUZCFqzRQfw+stg+M2a120OfYtx5xEg8Xo7iH7j3cYKni0yKONlTcHnFZ90HA6S+eRBVcXIqr6QPqKRU+uXHhNOHFB9nJnIL0hDehNaPt1keTXvoxfBEZ5guqP3OFAFbXB4oB8CAvuHEIxCa4588WgiL9cDKQIjIk1jCyAHQp0NZD5rl1YbaQHa1Ig1EAIkWM6QCNfFaPKqNu8m3cTV/ra8QbYZlpHE4A9JfF2tkAmXpf33xksItBOBVGcFNNpOD2UhkojtJ9XlgL8oE5P+2FlKys89Me6I5/CF/QqD7nrxLQnsC57eQ22E1Sdi7XQ4msg42CQi7NJT1r0yMO/Ah/lTEiDvLEQsimaSBFh8VneQ6U6sGAubiXvA7ujXuABNMQ3M9QUH1gaHSTrZa5VNAWi7qIW/eLyRjiD0JnPbph0F5579zu9dsu7alpFlzi1MuKzy/U7ICvqXn++ertE+61dWGlStN4NH9AOMrJ/sc/AIT+Am92+fj0A3uyAAAAAElFTkSuQmCC" InformativeScreenshot="3463161558edc73963da83f76845d445.jpg" Selector="&lt;html app='chrome.exe' title='KooBits - Engaging the Digital Kids' /&gt;" Title="KooBits - Engaging the Digital Kids" Url="https://student.koobits.com/notification" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>

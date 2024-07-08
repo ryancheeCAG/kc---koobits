@@ -1,0 +1,215 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="proc_Open_Browser" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ss="clr-namespace:System.Security;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_api" Type="InArgument(ss:SecureString)" />
+    <x:Property Name="in_token" Type="InArgument(x:String)" />
+    <x:Property Name="in_kc_username" Type="InArgument(x:String)" />
+    <x:Property Name="in_kc_pw" Type="InArgument(ss:SecureString)" />
+  </x:Members>
+  <this:proc_Open_Browser.in_api>
+    <InArgument x:TypeArguments="ss:SecureString" />
+  </this:proc_Open_Browser.in_api>
+  <this:proc_Open_Browser.in_token>
+    <InArgument x:TypeArguments="x:String" />
+  </this:proc_Open_Browser.in_token>
+  <this:proc_Open_Browser.in_kc_username>
+    <InArgument x:TypeArguments="x:String" />
+  </this:proc_Open_Browser.in_kc_username>
+  <this:proc_Open_Browser.in_kc_pw>
+    <InArgument x:TypeArguments="ss:SecureString" />
+  </this:proc_Open_Browser.in_kc_pw>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>2655,1511</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>proc_Open_Browser_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="proc_Open_Browser" sap:VirtualizedContainerService.HintSize="1112,1446" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Chrome: KooBits - Login" sap:VirtualizedContainerService.HintSize="1050,1335" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" InteractionMode="DebuggerApi" OpenMode="Always" ScopeGuid="838d58a3-7ebc-4c29-be9d-039f4caa9552" Version="V2" WindowResize="Maximize">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1016,1118" sap2010:WorkflowViewState.IdRef="Sequence_6">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NCheckState DisplayName="Check App State 'Love Learning'" sap:VirtualizedContainerService.HintSize="954,1005" sap2010:WorkflowViewState.IdRef="NCheckState_2" ScopeIdentifier="838d58a3-7ebc-4c29-be9d-039f4caa9552" Timeout="3" Version="V3">
+              <uix:NCheckState.IfExists>
+                <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,788" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'INPUT login-id'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="388,218" sap2010:WorkflowViewState.IdRef="NTypeInto_3" ScopeIdentifier="838d58a3-7ebc-4c29-be9d-039f4caa9552" Text="[in_kc_username]" Version="V3">
+                    <uix:NTypeInto.Target>
+                      <uix:TargetAnchorable BrowserURL="https://member.koobits.com/" DesignTimeRectangle="2347, 484, 826, 51" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'INPUT login-id'" FullSelectorArgument="&lt;webctrl id='login-id' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='login-id' tag='INPUT' type='text' class='' aaname='' /&gt;" Guid="93611f2e-bd2c-4f7f-9559-be6fb577c36f" ImageBase64="" InformativeScreenshot="7f93fb912795edd80602875bd497a5b9.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='KooBits - Login' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V2" Visibility="Interactive" />
+                    </uix:NTypeInto.Target>
+                  </uix:NTypeInto>
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Need Help?'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="388,218" sap2010:WorkflowViewState.IdRef="NTypeInto_4" IsPassword="True" ScopeIdentifier="838d58a3-7ebc-4c29-be9d-039f4caa9552" SecureText="[in_kc_pw]" Version="V3">
+                    <uix:NTypeInto.Target>
+                      <uix:TargetAnchorable BrowserURL="https://member.koobits.com/" DesignTimeRectangle="2347, 550, 738, 51" DesignTimeScaleFactor="1" ElementType="InputBoxPassword" FriendlyName="'INPUT password'" FullSelectorArgument="&lt;webctrl id='password' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='password' tag='INPUT' type='password' class='' aaname='' /&gt;" Guid="2be18343-8762-4a5b-b8a6-fdc38b0562f9" ImageBase64="" InformativeScreenshot="0f0f1a888d8734c56b7e8d9b5c3719cd.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='KooBits - Login' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V2" Visibility="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                            <uix:Target DesignTimeRectangle="2350, 633, 97, 23" ElementType="Text" FriendlyName="'Need Help?'" FullSelectorArgument="&lt;webctrl aaname='Need Help?' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Need Help?' tag='A' type='' class='' check:innerText='Need Help?' /&gt;" SearchSteps="FuzzySelector" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NTypeInto.Target>
+                  </uix:NTypeInto>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Login'" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="838d58a3-7ebc-4c29-be9d-039f4caa9552" Version="V3">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="https://member.koobits.com/" DesignTimeRectangle="2347, 672, 826, 50" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'Login'" FullSelectorArgument="&lt;webctrl tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='BUTTON' type='submit' class='new-login-button' aaname='Login' check:innerText='Login' /&gt;" Guid="c4e9815f-d794-472e-ac27-70b4791b5f2a" InformativeScreenshot="24bef323a50dea3f44a9f3a5536e86c0.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='KooBits - Login' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive" />
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                </Sequence>
+              </uix:NCheckState.IfExists>
+              <uix:NCheckState.IfNotExists>
+                <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,358" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="proc_Telegram_API - Send message.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="proc_Telegram_API - Send message.xaml">
+                    <ui:InvokeWorkflowFile.Arguments>
+                      <InArgument x:TypeArguments="x:String" x:Key="in_TelegramMessageToSend">
+                        <Literal x:TypeArguments="x:String">koobits page not available</Literal>
+                      </InArgument>
+                      <InArgument x:TypeArguments="ss:SecureString" x:Key="in_api">
+                        <VisualBasicValue x:TypeArguments="ss:SecureString" ExpressionText="in_api" />
+                      </InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="in_token">
+                        <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_token" />
+                      </InArgument>
+                    </ui:InvokeWorkflowFile.Arguments>
+                  </ui:InvokeWorkflowFile>
+                  <Throw Exception="[New BusinessRuleException(&quot;koobits page not available&quot;)]" sap:VirtualizedContainerService.HintSize="388,90" sap2010:WorkflowViewState.IdRef="Throw_2" />
+                </Sequence>
+              </uix:NCheckState.IfNotExists>
+              <uix:NCheckState.Target>
+                <uix:TargetAnchorable BrowserURL="https://member.koobits.com/" DesignTimeRectangle="2469, 289, 370, 139" DesignTimeScaleFactor="1" ElementType="Icon" FriendlyName="'SVG'" FullSelectorArgument="&lt;webctrl class='brandname-logo' tag='svg' /&gt;" FuzzySelectorArgument="&lt;webctrl class='brandname-logo' tag='svg' type='' aaname='' /&gt;" Guid="ab170f3a-2622-4b6b-94d3-df11caa60d4f" InformativeScreenshot="4e7b81aa95013302beeb1c2c67917e19.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='KooBits - Login' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                      <uix:Target DesignTimeRectangle="2859, 351, 159, 31" ElementType="Text" FriendlyName="'Love Learning'" FullSelectorArgument="&lt;webctrl class='brandname-tagline-text' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl class='brandname-tagline-text' tag='SPAN' type='' aaname='Love Learning' check:innerText='Love Learning' /&gt;" SearchSteps="FuzzySelector" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NCheckState.Target>
+            </uix:NCheckState>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-8, -8, 3456, 1408" BrowserType="Chrome" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAPsSURBVFhHYxgFgwqsWL6c6cruVVo/T68J+X1mTQQZOOzRwdVWt65fYYMaSTywlmK2OBHBc/ZLDv9/SvGLbLHnxTbiCYKCgkxQ4/EDTwUWj/eZfD+xGUYJbrHiaIZawSDCyShSbsJeocDHJAcVgoBwX3ehJ6l8r7EZQCn+nM3330GG2Y6ViYFtdxD3fpDYoxTe144yLHZQ6xkYtpT55KFrpCae5sQ5fYI9x0RksQ9ZfL+z9dmygNYzMbzpD1iNLAnCJyN4zi/34lqNjC/E8FxHV7c1gHsnspp1vlzrQb6Gyd9M4L1vIclsYifNbPMgmfclsl4QbrfmaGf4PiVgN7oE0HV5kPBBgEZL9k5kNSuAFgKFURIZsk9fpvN9DlFl9XsMDPJF7pyLNYSYVI6F85xGNgPoge1kOeBaHO9dAXZGAagUGESqs4bBfP8pm+9vnCZr1PlonqswPUfCeE6qCTApLQQ6BsR/CAwRBT5GOZIdAMotZhLMJlBhMNAWZtJ6BfQxTH+FKXvZFn/u7TA+DN9N5H1qAdRbYsxeZA9MnGDNpDogz5AtByoEBnxsDDzI6WO2C+fsSQ4ck2F8dPwmg++rIh+TDFQ7aQ5Y5c21FshEjnemZZ5cK2H6dgdz7y8yYsebq+YGybdC9UIAsQ5I0WFLE0SLdx1hJg2YHmC6uB2twRoGymLIZiHjtT5c6x3t7VBLR2IdwIiW4mEAaOjG52l8H4EpPuBZGt97dLNg+EwUz0VeYHRBtSEAsQ7ABYAJUAMUDc3AYhfdHBgGlX5K/EwKUC2ogFIHyPIwSgEtbwcymXKApdt7tCgA8n8CU7wNRDUWQIoDuFkZuFzlWBygXDAAlnJ2SdpsSVAuiG9zP5n3OcysHAO2DKAw7lqRBAcwAUu0pdfiee+CKheoGEOiNmsSPE9DgTQwVA6Fch8Hloz9wGw5HVf6AQNiHZCgxZoAk0/TZUuBCjM0WXK0yvEyIvI1FEhwMYp02HC0A9X/pooDkIviWwm8D9mZGThA4kuBCXCxB9dSHlYGHmZGBhZgFLmAiltQgQNVT30HgHCuAaREPA5tRV0ClobACmr5xRiem8jqgBi/A7BVx8Q44F4S71MuFgYuYA13HJgLWjUEmdRA6oAh4ISs7imwsQMUxu2AbeU+BcgaQPhKHO/9PcHcR5ExsG5/iq7udBTPVXR1IIxcGgLbCBuhVmEHUf7gJtlbZIOpiZ1kUbMtVtAV5+iFrwwnF2/JNAUVUMQBW2ABAiqvsRlEKn6SJvAy24gnZePGDbjjHhuYO2c205mN8/Q+H1oY9uvowhhS8fcjC6NubZ9vd+3SedI7JqNgYAADAwAMPpqqUr+oPwAAAABJRU5ErkJggg==" InformativeScreenshot="fa0878641077eaa68efe64c0bb1a61fc.jpg" Selector="&lt;html app='chrome.exe' title='KooBits - Login' /&gt;" Title="KooBits - Login" Url="https://member.koobits.com/" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>
