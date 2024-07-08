@@ -20,7 +20,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>2655,1511</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>2655,1513</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>proc_Open_Browser_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -122,19 +122,19 @@
       <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="proc_Open_Browser" sap:VirtualizedContainerService.HintSize="1112,1446" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="proc_Open_Browser" sap:VirtualizedContainerService.HintSize="1112,1448" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Chrome: KooBits - Login" sap:VirtualizedContainerService.HintSize="1050,1335" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" InteractionMode="DebuggerApi" OpenMode="Always" ScopeGuid="838d58a3-7ebc-4c29-be9d-039f4caa9552" Version="V2" WindowResize="Maximize">
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Chrome: KooBits - Login" sap:VirtualizedContainerService.HintSize="1050,1337" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" InteractionMode="DebuggerApi" OpenMode="Always" ScopeGuid="838d58a3-7ebc-4c29-be9d-039f4caa9552" Version="V2" WindowResize="Maximize">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1016,1118" sap2010:WorkflowViewState.IdRef="Sequence_6">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1016,1120" sap2010:WorkflowViewState.IdRef="Sequence_6">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -150,23 +150,23 @@
                   </sap:WorkflowViewStateService.ViewState>
                   <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'INPUT login-id'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="388,218" sap2010:WorkflowViewState.IdRef="NTypeInto_3" ScopeIdentifier="838d58a3-7ebc-4c29-be9d-039f4caa9552" Text="[in_kc_username]" Version="V3">
                     <uix:NTypeInto.Target>
-                      <uix:TargetAnchorable BrowserURL="https://member.koobits.com/" DesignTimeRectangle="2347, 484, 826, 51" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'INPUT login-id'" FullSelectorArgument="&lt;webctrl id='login-id' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='login-id' tag='INPUT' type='text' class='' aaname='' /&gt;" Guid="93611f2e-bd2c-4f7f-9559-be6fb577c36f" ImageBase64="" InformativeScreenshot="7f93fb912795edd80602875bd497a5b9.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='KooBits - Login' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V2" Visibility="Interactive" />
+                      <uix:TargetAnchorable BrowserURL="https://member.koobits.com/" DesignTimeRectangle="2347, 484, 826, 51" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'INPUT login-id'" FullSelectorArgument="&lt;webctrl id='login-id' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='login-id' tag='INPUT' type='text' class='' aaname='' /&gt;" Guid="93611f2e-bd2c-4f7f-9559-be6fb577c36f" ImageBase64="" InformativeScreenshot="7f93fb912795edd80602875bd497a5b9.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='KooBits - Login' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V2" Visibility="Interactive" WaitForReadyArgument="Complete" />
                     </uix:NTypeInto.Target>
                   </uix:NTypeInto>
                   <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Need Help?'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="388,218" sap2010:WorkflowViewState.IdRef="NTypeInto_4" IsPassword="True" ScopeIdentifier="838d58a3-7ebc-4c29-be9d-039f4caa9552" SecureText="[in_kc_pw]" Version="V3">
                     <uix:NTypeInto.Target>
-                      <uix:TargetAnchorable BrowserURL="https://member.koobits.com/" DesignTimeRectangle="2347, 550, 738, 51" DesignTimeScaleFactor="1" ElementType="InputBoxPassword" FriendlyName="'INPUT password'" FullSelectorArgument="&lt;webctrl id='password' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='password' tag='INPUT' type='password' class='' aaname='' /&gt;" Guid="2be18343-8762-4a5b-b8a6-fdc38b0562f9" ImageBase64="" InformativeScreenshot="0f0f1a888d8734c56b7e8d9b5c3719cd.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='KooBits - Login' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V2" Visibility="Interactive">
+                      <uix:TargetAnchorable BrowserURL="https://member.koobits.com/" DesignTimeRectangle="2347, 550, 738, 51" DesignTimeScaleFactor="1" ElementType="InputBoxPassword" FriendlyName="'INPUT password'" FullSelectorArgument="&lt;webctrl id='password' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='password' tag='INPUT' type='password' class='' aaname='' /&gt;" Guid="2be18343-8762-4a5b-b8a6-fdc38b0562f9" ImageBase64="" InformativeScreenshot="0f0f1a888d8734c56b7e8d9b5c3719cd.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='KooBits - Login' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V2" Visibility="Interactive" WaitForReadyArgument="Complete">
                         <uix:TargetAnchorable.Anchors>
-                          <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
                             <uix:Target DesignTimeRectangle="2350, 633, 97, 23" ElementType="Text" FriendlyName="'Need Help?'" FullSelectorArgument="&lt;webctrl aaname='Need Help?' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Need Help?' tag='A' type='' class='' check:innerText='Need Help?' /&gt;" SearchSteps="FuzzySelector" />
                           </scg:List>
                         </uix:TargetAnchorable.Anchors>
                       </uix:TargetAnchorable>
                     </uix:NTypeInto.Target>
                   </uix:NTypeInto>
-                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Login'" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="838d58a3-7ebc-4c29-be9d-039f4caa9552" Version="V3">
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DelayAfter="3" DisplayName="Click 'Login'" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="838d58a3-7ebc-4c29-be9d-039f4caa9552" Version="V3">
                     <uix:NClick.Target>
-                      <uix:TargetAnchorable BrowserURL="https://member.koobits.com/" DesignTimeRectangle="2347, 672, 826, 50" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'Login'" FullSelectorArgument="&lt;webctrl tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='BUTTON' type='submit' class='new-login-button' aaname='Login' check:innerText='Login' /&gt;" Guid="c4e9815f-d794-472e-ac27-70b4791b5f2a" InformativeScreenshot="24bef323a50dea3f44a9f3a5536e86c0.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='KooBits - Login' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive" />
+                      <uix:TargetAnchorable BrowserURL="https://member.koobits.com/" DesignTimeRectangle="2347, 672, 826, 50" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'Login'" FullSelectorArgument="&lt;webctrl tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='BUTTON' type='submit' class='new-login-button' aaname='Login' check:innerText='Login' /&gt;" Guid="c4e9815f-d794-472e-ac27-70b4791b5f2a" InformativeScreenshot="24bef323a50dea3f44a9f3a5536e86c0.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='KooBits - Login' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive" WaitForReadyArgument="Complete" />
                     </uix:NClick.Target>
                   </uix:NClick>
                 </Sequence>
@@ -180,24 +180,18 @@
                   </sap:WorkflowViewStateService.ViewState>
                   <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="proc_Telegram_API - Send message.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="proc_Telegram_API - Send message.xaml">
                     <ui:InvokeWorkflowFile.Arguments>
-                      <InArgument x:TypeArguments="x:String" x:Key="in_TelegramMessageToSend">
-                        <Literal x:TypeArguments="x:String">koobits page not available</Literal>
-                      </InArgument>
-                      <InArgument x:TypeArguments="ss:SecureString" x:Key="in_api">
-                        <VisualBasicValue x:TypeArguments="ss:SecureString" ExpressionText="in_api" />
-                      </InArgument>
-                      <InArgument x:TypeArguments="x:String" x:Key="in_token">
-                        <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_token" />
-                      </InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="in_TelegramMessageToSend">koobits page not available</InArgument>
+                      <InArgument x:TypeArguments="ss:SecureString" x:Key="in_api">[in_api]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="in_token">[in_token]</InArgument>
                     </ui:InvokeWorkflowFile.Arguments>
                   </ui:InvokeWorkflowFile>
                   <Throw Exception="[New BusinessRuleException(&quot;koobits page not available&quot;)]" sap:VirtualizedContainerService.HintSize="388,90" sap2010:WorkflowViewState.IdRef="Throw_2" />
                 </Sequence>
               </uix:NCheckState.IfNotExists>
               <uix:NCheckState.Target>
-                <uix:TargetAnchorable BrowserURL="https://member.koobits.com/" DesignTimeRectangle="2469, 289, 370, 139" DesignTimeScaleFactor="1" ElementType="Icon" FriendlyName="'SVG'" FullSelectorArgument="&lt;webctrl class='brandname-logo' tag='svg' /&gt;" FuzzySelectorArgument="&lt;webctrl class='brandname-logo' tag='svg' type='' aaname='' /&gt;" Guid="ab170f3a-2622-4b6b-94d3-df11caa60d4f" InformativeScreenshot="4e7b81aa95013302beeb1c2c67917e19.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='KooBits - Login' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive">
+                <uix:TargetAnchorable BrowserURL="https://member.koobits.com/" DesignTimeRectangle="2469, 289, 370, 139" DesignTimeScaleFactor="1" ElementType="Icon" FriendlyName="'SVG'" FullSelectorArgument="&lt;webctrl class='brandname-logo' tag='svg' /&gt;" FuzzySelectorArgument="&lt;webctrl class='brandname-logo' tag='svg' type='' aaname='' /&gt;" Guid="ab170f3a-2622-4b6b-94d3-df11caa60d4f" InformativeScreenshot="4e7b81aa95013302beeb1c2c67917e19.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='KooBits - Login' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive" WaitForReadyArgument="Complete">
                   <uix:TargetAnchorable.Anchors>
-                    <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
                       <uix:Target DesignTimeRectangle="2859, 351, 159, 31" ElementType="Text" FriendlyName="'Love Learning'" FullSelectorArgument="&lt;webctrl class='brandname-tagline-text' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl class='brandname-tagline-text' tag='SPAN' type='' aaname='Love Learning' check:innerText='Love Learning' /&gt;" SearchSteps="FuzzySelector" />
                     </scg:List>
                   </uix:TargetAnchorable.Anchors>

@@ -106,19 +106,19 @@
       <AssemblyReference>UiPath.Workflow</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="proc_Logout" sap:VirtualizedContainerService.HintSize="546,948" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="proc_Logout" sap:VirtualizedContainerService.HintSize="546,950" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Always" DisplayName="Use Browser Chrome: KooBits - Engaging the Digital Kids" sap:VirtualizedContainerService.HintSize="484,837" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="916fe5e3-59e4-4796-8eb8-339848add2bc" Version="V2" WindowResize="Maximize">
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Always" DisplayName="Use Browser Chrome: KooBits - Engaging the Digital Kids" sap:VirtualizedContainerService.HintSize="484,839" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="916fe5e3-59e4-4796-8eb8-339848add2bc" Version="V2" WindowResize="Maximize">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,620" sap2010:WorkflowViewState.IdRef="Sequence_3">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,622" sap2010:WorkflowViewState.IdRef="Sequence_3">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -126,9 +126,9 @@
             </sap:WorkflowViewStateService.ViewState>
             <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'IMG'" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="916fe5e3-59e4-4796-8eb8-339848add2bc" Version="V3">
               <uix:NClick.Target>
-                <uix:TargetAnchorable BrowserURL="https://student.koobits.com/assignment/assignment-list" DesignTimeRectangle="3394, 158, 12, 7" DesignTimeScaleFactor="1" ElementType="Icon" FriendlyName="'IMG'" FullSelectorArgument="&lt;webctrl class='arrow' tag='IMG' /&gt;" FuzzySelectorArgument="&lt;webctrl class='arrow' tag='IMG' type='' aaname='' /&gt;" Guid="b098732c-596f-487c-9db8-2f2a815b3b4c" InformativeScreenshot="39a4c6491d9f5601320d03f6466d2b5f.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='KooBits - Engaging the Digital Kids' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V2" Visibility="Interactive">
+                <uix:TargetAnchorable BrowserURL="https://student.koobits.com/assignment/assignment-list" DesignTimeRectangle="3394, 158, 12, 7" DesignTimeScaleFactor="1" ElementType="Icon" FriendlyName="'IMG'" FullSelectorArgument="&lt;webctrl class='arrow' tag='IMG' /&gt;" FuzzySelectorArgument="&lt;webctrl class='arrow' tag='IMG' type='' aaname='' /&gt;" Guid="b098732c-596f-487c-9db8-2f2a815b3b4c" InformativeScreenshot="39a4c6491d9f5601320d03f6466d2b5f.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='KooBits - Engaging the Digital Kids' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V2" Visibility="Interactive" WaitForReadyArgument="Complete">
                   <uix:TargetAnchorable.Anchors>
-                    <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
                       <uix:Target DesignTimeRectangle="3343, 139, 40, 40" ElementType="Icon" FriendlyName="'IMG'" FullSelectorArgument="&lt;webctrl tag='IMG' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='IMG' type='' class='profile-picture' aaname='Profile' /&gt;" SearchSteps="FuzzySelector" />
                     </scg:List>
                   </uix:TargetAnchorable.Anchors>
@@ -137,20 +137,14 @@
             </uix:NClick>
             <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Logout'" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="916fe5e3-59e4-4796-8eb8-339848add2bc" Version="V3">
               <uix:NClick.Target>
-                <uix:TargetAnchorable BrowserURL="https://student.koobits.com/assignment/assignment-list" DesignTimeRectangle="3254, 354, 158, 40" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Logout'" FullSelectorArgument="&lt;webctrl aaname='Logout' aria-role='button' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Logout' aria-role='button' tag='A' type='' class='dropdown-item' check:innerText='Logout' /&gt;" Guid="ff5a6778-a092-4131-8313-51ea01c727ee" InformativeScreenshot="80cd48625c1a76212d470e689ef057ff.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='KooBits - Engaging the Digital Kids' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive" />
+                <uix:TargetAnchorable BrowserURL="https://student.koobits.com/assignment/assignment-list" DesignTimeRectangle="3254, 354, 158, 40" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Logout'" FullSelectorArgument="&lt;webctrl aaname='Logout' aria-role='button' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Logout' aria-role='button' tag='A' type='' class='dropdown-item' check:innerText='Logout' /&gt;" Guid="ff5a6778-a092-4131-8313-51ea01c727ee" InformativeScreenshot="80cd48625c1a76212d470e689ef057ff.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='KooBits - Engaging the Digital Kids' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive" WaitForReadyArgument="Complete" />
               </uix:NClick.Target>
             </uix:NClick>
             <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="proc_Telegram_API - Send message.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="proc_Telegram_API - Send message.xaml">
               <ui:InvokeWorkflowFile.Arguments>
-                <InArgument x:TypeArguments="x:String" x:Key="in_TelegramMessageToSend">
-                  <Literal x:TypeArguments="x:String">Logging out</Literal>
-                </InArgument>
-                <InArgument x:TypeArguments="ss:SecureString" x:Key="in_api">
-                  <VisualBasicValue x:TypeArguments="ss:SecureString" ExpressionText="in_api" />
-                </InArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="in_token">
-                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_token" />
-                </InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_TelegramMessageToSend">Logging out</InArgument>
+                <InArgument x:TypeArguments="ss:SecureString" x:Key="in_api">[in_api]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_token">[in_token]</InArgument>
               </ui:InvokeWorkflowFile.Arguments>
             </ui:InvokeWorkflowFile>
           </Sequence>
