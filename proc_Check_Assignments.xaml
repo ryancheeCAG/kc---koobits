@@ -250,9 +250,15 @@
                                     </sap:WorkflowViewStateService.ViewState>
                                     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="proc_Telegram_API - Send message.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="334,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_11" UnSafe="False" WorkflowFileName="proc_Telegram_API - Send message.xaml">
                                       <ui:InvokeWorkflowFile.Arguments>
-                                        <InArgument x:TypeArguments="x:String" x:Key="in_TelegramMessageToSend">["Detected " + countResult.ToString + " assignment(s) "]</InArgument>
-                                        <InArgument x:TypeArguments="ss:SecureString" x:Key="in_api">[in_api]</InArgument>
-                                        <InArgument x:TypeArguments="x:String" x:Key="in_token">[in_token]</InArgument>
+                                        <InArgument x:TypeArguments="x:String" x:Key="in_TelegramMessageToSend">
+                                          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="&quot;Detected &quot; + &quot;*&quot; + countResult.ToString + &quot;*&quot; + &quot; assignment(s) &quot;" />
+                                        </InArgument>
+                                        <InArgument x:TypeArguments="ss:SecureString" x:Key="in_api">
+                                          <VisualBasicValue x:TypeArguments="ss:SecureString" ExpressionText="in_api" />
+                                        </InArgument>
+                                        <InArgument x:TypeArguments="x:String" x:Key="in_token">
+                                          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_token" />
+                                        </InArgument>
                                       </ui:InvokeWorkflowFile.Arguments>
                                     </ui:InvokeWorkflowFile>
                                   </Sequence>
@@ -425,9 +431,15 @@
                                     </sap:WorkflowViewStateService.ViewState>
                                     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="proc_Telegram_API - Send message.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="334,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_18" UnSafe="False" WorkflowFileName="proc_Telegram_API - Send message.xaml">
                                       <ui:InvokeWorkflowFile.Arguments>
-                                        <InArgument x:TypeArguments="x:String" x:Key="in_TelegramMessageToSend">["Detected " + countResult.ToString + " assignment(s) "]</InArgument>
-                                        <InArgument x:TypeArguments="ss:SecureString" x:Key="in_api">[in_api]</InArgument>
-                                        <InArgument x:TypeArguments="x:String" x:Key="in_token">[in_token]</InArgument>
+                                        <InArgument x:TypeArguments="x:String" x:Key="in_TelegramMessageToSend">
+                                          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="&quot;Detected &quot; + &quot;*&quot; + countResult.ToString + &quot;*&quot; + &quot; assignment(s) &quot;" />
+                                        </InArgument>
+                                        <InArgument x:TypeArguments="ss:SecureString" x:Key="in_api">
+                                          <VisualBasicValue x:TypeArguments="ss:SecureString" ExpressionText="in_api" />
+                                        </InArgument>
+                                        <InArgument x:TypeArguments="x:String" x:Key="in_token">
+                                          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_token" />
+                                        </InArgument>
                                       </ui:InvokeWorkflowFile.Arguments>
                                     </ui:InvokeWorkflowFile>
                                   </Sequence>
