@@ -272,9 +272,15 @@
                                     </sap:WorkflowViewStateService.ViewState>
                                     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="proc_Telegram_API - Send message.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="334,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_12" UnSafe="False" WorkflowFileName="proc_Telegram_API - Send message.xaml">
                                       <ui:InvokeWorkflowFile.Arguments>
-                                        <InArgument x:TypeArguments="x:String" x:Key="in_TelegramMessageToSend">No outstanding assignment(s)</InArgument>
-                                        <InArgument x:TypeArguments="ss:SecureString" x:Key="in_api">[in_api]</InArgument>
-                                        <InArgument x:TypeArguments="x:String" x:Key="in_token">[in_token]</InArgument>
+                                        <InArgument x:TypeArguments="x:String" x:Key="in_TelegramMessageToSend">
+                                          <Literal x:TypeArguments="x:String">*No outstanding* assignment(s)</Literal>
+                                        </InArgument>
+                                        <InArgument x:TypeArguments="ss:SecureString" x:Key="in_api">
+                                          <VisualBasicValue x:TypeArguments="ss:SecureString" ExpressionText="in_api" />
+                                        </InArgument>
+                                        <InArgument x:TypeArguments="x:String" x:Key="in_token">
+                                          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_token" />
+                                        </InArgument>
                                       </ui:InvokeWorkflowFile.Arguments>
                                     </ui:InvokeWorkflowFile>
                                   </Sequence>
@@ -291,9 +297,15 @@
                               </sap:WorkflowViewStateService.ViewState>
                               <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="proc_Telegram_API - Send message.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_10" UnSafe="False" WorkflowFileName="proc_Telegram_API - Send message.xaml">
                                 <ui:InvokeWorkflowFile.Arguments>
-                                  <InArgument x:TypeArguments="x:String" x:Key="in_TelegramMessageToSend">Assignment page not available</InArgument>
-                                  <InArgument x:TypeArguments="ss:SecureString" x:Key="in_api">[in_api]</InArgument>
-                                  <InArgument x:TypeArguments="x:String" x:Key="in_token">[in_token]</InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_TelegramMessageToSend">
+                                    <Literal x:TypeArguments="x:String">Assignment page *not available*</Literal>
+                                  </InArgument>
+                                  <InArgument x:TypeArguments="ss:SecureString" x:Key="in_api">
+                                    <VisualBasicValue x:TypeArguments="ss:SecureString" ExpressionText="in_api" />
+                                  </InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_token">
+                                    <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_token" />
+                                  </InArgument>
                                 </ui:InvokeWorkflowFile.Arguments>
                               </ui:InvokeWorkflowFile>
                               <Throw Exception="[New BusinessRuleException(&quot;Assignment page not available&quot;)]" sap:VirtualizedContainerService.HintSize="388,90" sap2010:WorkflowViewState.IdRef="Throw_4" />
@@ -453,9 +465,15 @@
                                     </sap:WorkflowViewStateService.ViewState>
                                     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="proc_Telegram_API - Send message.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="334,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_19" UnSafe="False" WorkflowFileName="proc_Telegram_API - Send message.xaml">
                                       <ui:InvokeWorkflowFile.Arguments>
-                                        <InArgument x:TypeArguments="x:String" x:Key="in_TelegramMessageToSend">No outstanding assignment(s)</InArgument>
-                                        <InArgument x:TypeArguments="ss:SecureString" x:Key="in_api">[in_api]</InArgument>
-                                        <InArgument x:TypeArguments="x:String" x:Key="in_token">[in_token]</InArgument>
+                                        <InArgument x:TypeArguments="x:String" x:Key="in_TelegramMessageToSend">
+                                          <Literal x:TypeArguments="x:String">*No outstanding* assignment(s)</Literal>
+                                        </InArgument>
+                                        <InArgument x:TypeArguments="ss:SecureString" x:Key="in_api">
+                                          <VisualBasicValue x:TypeArguments="ss:SecureString" ExpressionText="in_api" />
+                                        </InArgument>
+                                        <InArgument x:TypeArguments="x:String" x:Key="in_token">
+                                          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_token" />
+                                        </InArgument>
                                       </ui:InvokeWorkflowFile.Arguments>
                                     </ui:InvokeWorkflowFile>
                                   </Sequence>
@@ -472,9 +490,15 @@
                               </sap:WorkflowViewStateService.ViewState>
                               <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="proc_Telegram_API - Send message.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_17" UnSafe="False" WorkflowFileName="proc_Telegram_API - Send message.xaml">
                                 <ui:InvokeWorkflowFile.Arguments>
-                                  <InArgument x:TypeArguments="x:String" x:Key="in_TelegramMessageToSend">Assignment page not available</InArgument>
-                                  <InArgument x:TypeArguments="ss:SecureString" x:Key="in_api">[in_api]</InArgument>
-                                  <InArgument x:TypeArguments="x:String" x:Key="in_token">[in_token]</InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_TelegramMessageToSend">
+                                    <Literal x:TypeArguments="x:String">Assignment page *not available*</Literal>
+                                  </InArgument>
+                                  <InArgument x:TypeArguments="ss:SecureString" x:Key="in_api">
+                                    <VisualBasicValue x:TypeArguments="ss:SecureString" ExpressionText="in_api" />
+                                  </InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_token">
+                                    <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_token" />
+                                  </InArgument>
                                 </ui:InvokeWorkflowFile.Arguments>
                               </ui:InvokeWorkflowFile>
                               <Throw Exception="[New BusinessRuleException(&quot;Assignment page not available&quot;)]" sap:VirtualizedContainerService.HintSize="388,90" sap2010:WorkflowViewState.IdRef="Throw_5" />
@@ -507,9 +531,15 @@
                         </sap:WorkflowViewStateService.ViewState>
                         <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="proc_Telegram_API - Send message.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="proc_Telegram_API - Send message.xaml">
                           <ui:InvokeWorkflowFile.Arguments>
-                            <InArgument x:TypeArguments="x:String" x:Key="in_TelegramMessageToSend">Login fail</InArgument>
-                            <InArgument x:TypeArguments="ss:SecureString" x:Key="in_api">[in_api]</InArgument>
-                            <InArgument x:TypeArguments="x:String" x:Key="in_token">[in_token]</InArgument>
+                            <InArgument x:TypeArguments="x:String" x:Key="in_TelegramMessageToSend">
+                              <Literal x:TypeArguments="x:String">*Login fail*</Literal>
+                            </InArgument>
+                            <InArgument x:TypeArguments="ss:SecureString" x:Key="in_api">
+                              <VisualBasicValue x:TypeArguments="ss:SecureString" ExpressionText="in_api" />
+                            </InArgument>
+                            <InArgument x:TypeArguments="x:String" x:Key="in_token">
+                              <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_token" />
+                            </InArgument>
                           </ui:InvokeWorkflowFile.Arguments>
                         </ui:InvokeWorkflowFile>
                         <Throw Exception="[New BusinessRuleException(&quot;Login fail&quot;)]" sap:VirtualizedContainerService.HintSize="388,90" sap2010:WorkflowViewState.IdRef="Throw_2" />
